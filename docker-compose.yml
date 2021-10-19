@@ -11,6 +11,7 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - MONGO_URL=mongodb://host.docker.internal:27017
+      - SECRET_TOKEN_KEY=1q2w3e4r5t6y7u8i9o0p_prod
     volumes:
       - ./logs:/logs
     networks:
