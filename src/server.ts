@@ -17,7 +17,6 @@ const safeMongooseConnection = new SafeMongooseConnection({
   }),
   onConnectionRetry: mongoUrl => logger.info(`Retrying to MongoDB at ${mongoUrl}`)
 });
- 
 
 const serve = () => app.listen(PORT, () => {
   logger.info(`🌏 Express server started at http://localhost:${PORT}`);
