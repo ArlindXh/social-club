@@ -15,7 +15,6 @@ const findAll: RequestHandler = async (req: any, res) => {
             message: "User Information Data",
             user: detailedUsers.sort((a, b) => b.likes - a.likes)
         });
-
     } catch (error) {
         logger.error(error);
         res.status(500).send(error);

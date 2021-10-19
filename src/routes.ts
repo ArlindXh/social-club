@@ -10,7 +10,7 @@ import unlike from "./controllers/user/unlike"
 
 const router = Router();
 
-router.post('/register', register);
+router.post('/signup', register);
 router.post('/login', login);
 router.get('/me', selfInfo);
 router.patch('/me/update-password', updatePassword);
