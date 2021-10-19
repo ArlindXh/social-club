@@ -2,6 +2,7 @@ import { RequestHandler } from 'express';
 import User from '../../models/Users';
 import { registerValidation } from "../../util/validation";
 import { hashPassword } from "../../util/auth";
+import logger from '../../logger';
 
 const register: RequestHandler = async (req: any, res) => {
     try {
@@ -10,19 +11,19 @@ const register: RequestHandler = async (req: any, res) => {
             let errorMessage = userValidation.error?.details[0]?.message;
             return res.status(400).send(errorMessage)
         }
-        const { name, email, password, likes = 0 } = req.body;
+        const { name, email, password} = req.body;
 
         const userExists = await User.findOne({ email });
         if (userExists) return res.status(400).send({ message: "User already exists." });
         const hashedPassword = await hashPassword(password);
-        const user = new User({ name, email, password: hashedPassword, likes });
+        const user = new User({ name, email, password: hashedPassword });
         await user.save();
         res.send({
-            message: 'Saved',
+            message: 'User registration complete.',
             user: user.toJSON()
         });
     } catch (error) {
-        console.log(error);
+        logger.error(error);
         res.status(500).send(error);
     }
 };

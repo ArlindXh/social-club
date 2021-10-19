@@ -1,14 +1,10 @@
 /* eslint-disable import/first */
 import dotenv from 'dotenv';
-const result = dotenv.config();
-if (result.error) {
-  dotenv.config({ path: '.env.default' });
-}
-
 import app from './app';
 import SafeMongooseConnection from './lib/safe-mongoose-connection';
 import logger from './logger';
 
+dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 const safeMongooseConnection = new SafeMongooseConnection({
