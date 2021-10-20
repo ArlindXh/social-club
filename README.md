@@ -3,6 +3,24 @@ This project provides a register/login functionality with authentication calls.
 As a user you can like and unlike other users, you can also see user information based on their id, or even see who are the users with the most likes.
 
 
+## Local Setup
+```
+npm i
+npm run ts-node-server
+```
+
+## Setup docker for development environment
+
+```
+$ docker build -t api-server .
+$ npm run docker
+```
+
+## Run Test in Dev environment (while docker is running)
+```
+npm run test
+```
+
 ## Why MongoDB? ##
 
 MongoDB is used to store all the data. There are 2 tables (`users` and `user_likes`).
