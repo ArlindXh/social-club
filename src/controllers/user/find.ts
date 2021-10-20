@@ -6,7 +6,7 @@ import logger from '../../logger';
 const find: RequestHandler = async (req: any, res) => {
     try {
         const {id: userId } = req.params
-        
+        if (!userId.match(/^[0-9a-fA-F]{24}$/)) return res.status(400).send({ message: "Unsupported id in path" });
         const user: UserInterface = await User.findById(userId, "name -_id");
         const userLikes: number = await UserLikes.countDocuments({liked: userId})
         const userData: Object = {
