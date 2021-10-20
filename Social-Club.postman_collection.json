@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "1c8d1ae1-446c-4215-bd66-527a13a6cfc1",
+		"name": "Social-Club",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Qarr Bungu\",\r\n    \"email\":\"qarr123@gmail.com\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"qarr123@gmail.com\",\r\n    \"password\":\"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/me",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-password",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldPassword\":\"qwertya\",\r\n    \"newPassword\":\"qwerty\",\r\n    \"confirmPassword\":\"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/me/update-password",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"me",
+						"update-password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{bestoken}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host}}/user/61708f045bb68832b7e6347d",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"61708f045bb68832b7e6347d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "like",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/user/61708defed934c4a20ff244c/like",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"61708defed934c4a20ff244c",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unlike",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{bestoken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/user/616ee5902e3d743bf4558e56/unlike",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"user",
+						"616ee5902e3d743bf4558e56",
+						"unlike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find-all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/most-liked",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"most-liked"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "jwt-token",
+			"value": "eyJ1c2VySWQiOiI2MTZkYzkyNmQ5OTgyNzM4NjAzY2Q4MDYiLCJpYXQiOjE2MzQ1ODc2ODl9.5E76fg9BNtL6rJ42ofDTbpxC_YKNK"
+		}
+	]
+}
