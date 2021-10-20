@@ -1,9 +1,9 @@
-import { RequestHandler } from 'express';
+import { RequestHandler, Request, Response } from 'express';
 import User, { UserInterface } from '../../models/Users';
-import UserLikes, { UserLikesInterface } from '../../models/UserLikes';
+import UserLikes from '../../models/UserLikes';
 import logger from '../../logger';
 
-const find: RequestHandler = async (req: any, res) => {
+const find: RequestHandler = async (req: Request, res: Response) => {
     try {
         const {id: userId } = req.params
         if (!userId.match(/^[0-9a-fA-F]{24}$/)) return res.status(400).send({ message: "Unsupported id in path" });

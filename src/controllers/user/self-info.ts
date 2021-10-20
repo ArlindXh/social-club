@@ -1,11 +1,11 @@
-import { RequestHandler } from 'express';
+import { RequestHandler, Request, Response } from 'express';
 import User, { UserInterface } from '../../models/Users';
-import UserLikes, { UserLikesInterface } from '../../models/UserLikes';
+import UserLikes from '../../models/UserLikes';
 import { verifyAndDecode } from "../../util/jwt";
 import { JwtPayload } from "jsonwebtoken"
 import logger from '../../logger';
 
-const selfInfo: RequestHandler = async (req: any, res) => {
+const selfInfo: RequestHandler = async (req: Request, res: Response) => {
     try {
         const verifiedTokenObj: JwtPayload = verifyAndDecode(req.header("Authorization"));
         const data: UserInterface = await User.findById(verifiedTokenObj.userId, "email name") // include '-_id' if we want to exclude _id from being retrieved

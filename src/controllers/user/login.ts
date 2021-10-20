@@ -1,11 +1,11 @@
-import { RequestHandler } from 'express';
+import { RequestHandler, Request, Response } from 'express';
 import User from '../../models/Users';
 import { loginValidation } from "../../util/validation";
 import { validatePassword } from "../../util/auth";
 import { generateToken } from "../../util/jwt";
 import logger from '../../logger';
 
-const login: RequestHandler = async (req: any, res) => {
+const login: RequestHandler = async (req: Request, res: Response) => {
     try {
         let userValidation = loginValidation(req.body);
         if (userValidation.error) {

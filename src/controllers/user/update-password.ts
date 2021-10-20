@@ -1,4 +1,4 @@
-import { RequestHandler } from 'express';
+import { RequestHandler, Request, Response } from 'express';
 import User, { UserInterface } from '../../models/Users';
 import { verifyAndDecode } from "../../util/jwt";
 import { JwtPayload } from "jsonwebtoken"
@@ -6,7 +6,7 @@ import { updatePasswordValidation } from "../../util/validation";
 import { validatePassword, hashPassword } from "../../util/auth";
 import logger from '../../logger';
 
-const updatePassword: RequestHandler = async (req: any, res) => {
+const updatePassword: RequestHandler = async (req: Request, res: Response) => {
     try {
         const verifiedTokenObj: JwtPayload = verifyAndDecode(req.header("Authorization"));
         let validation = updatePasswordValidation(req.body);

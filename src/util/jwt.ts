@@ -6,7 +6,7 @@ export const generateToken = (userId: string) => {
     return token;
 }
 
-export const verifyAndDecode = (token: any): Object => {
+export const verifyAndDecode = (token: string): Object => {
     try {
         return jwt.verify(token, process.env.SECRET_TOKEN_KEY)
 

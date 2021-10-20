@@ -1,11 +1,11 @@
-import { RequestHandler } from 'express';
-import UserLikes, { UserLikesInterface } from '../../models/UserLikes';
+import { RequestHandler, Request, Response } from 'express';
+import UserLikes from '../../models/UserLikes';
 import User, { UserInterface } from '../../models/Users';
 import { verifyAndDecode } from "../../util/jwt";
 import { JwtPayload } from "jsonwebtoken"
 import logger from '../../logger';
 
-const like: RequestHandler = async (req: any, res) => {
+const like: RequestHandler = async (req: Request, res: Response) => {
     try {
         const verifiedTokenObj: JwtPayload = verifyAndDecode(req.header("Authorization"));
         const { id: userIdLiked } = req.params

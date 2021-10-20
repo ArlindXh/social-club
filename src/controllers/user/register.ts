@@ -1,10 +1,10 @@
-import { RequestHandler } from 'express';
+import { RequestHandler, Request, Response } from 'express';
 import User from '../../models/Users';
 import { registerValidation } from "../../util/validation";
 import { hashPassword } from "../../util/auth";
 import logger from '../../logger';
 
-const register: RequestHandler = async (req: any, res) => {
+const register: RequestHandler = async (req: Request, res: Response) => {
     try {
         let userValidation = registerValidation(req.body);
         if (userValidation.error) {

@@ -1,9 +1,9 @@
-import { RequestHandler } from 'express';
+import { RequestHandler, Request, Response } from 'express';
 import User, { UserInterface } from '../../models/Users';
-import UserLikes, { UserLikesInterface } from '../../models/UserLikes';
+import UserLikes from '../../models/UserLikes';
 import logger from '../../logger';
 
-const findAll: RequestHandler = async (req: any, res) => {
+const findAll: RequestHandler = async (req: Request, res: Response) => {
     try {
         const users: Array<UserInterface> = await User.find({}, 'name');
         const detailedUsers = await Promise.all(users.map(async (user: any) => {
