@@ -9,7 +9,6 @@ RUN npm i
 # Copy source
 COPY src ./src
 COPY tsconfig.json ./tsconfig.json
-COPY openapi.json ./openapi.json
 
 # Build dist
 RUN npm run build
@@ -21,9 +20,6 @@ FROM gcr.io/distroless/nodejs:14
 COPY --from=base ./node_modules ./node_modules
 COPY --from=base /dist /dist
 
-# Copy static files
-COPY src/public dist/src/public
-
 # Expose port 3000
 EXPOSE 3000
-CMD ["dist/src/server.js"]
+CMD ["dist/server.js"]
