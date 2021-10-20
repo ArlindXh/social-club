@@ -9,7 +9,7 @@ const selfInfo: RequestHandler = async (req: any, res) => {
     try {
         const verifiedTokenObj: JwtPayload = verifyAndDecode(req.header("Authorization"));
         const data: UserInterface = await User.findById(verifiedTokenObj.userId, "email name") // include '-_id' if we want to exclude _id from being retrieved
-        const userLikes: number = await UserLikes.countDocuments({liked: verifiedTokenObj.userId})
+        const userLikes: number = await UserLikes.countDocuments({ liked: verifiedTokenObj.userId })
         let userData = {
             name: data.name,
             email: data.email,
@@ -21,7 +21,11 @@ const selfInfo: RequestHandler = async (req: any, res) => {
         });
     } catch (error) {
         logger.error(error);
-        res.status(500).send(error);
+        if (error.message === "jwt malformed") {
+            res.status(400).send({ message: "Malformed or bad token" })
+        } else {
+            throw error;
+        }
     }
 };
 
