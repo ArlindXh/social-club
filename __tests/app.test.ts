@@ -8,7 +8,6 @@ import { generateToken } from "../src/util/jwt";
 import dotenv from "dotenv"
 dotenv.config();
 
-const baseUrl = "http://localhost:3000"
 let allowedTlds = ['com', 'net', 'de', 'io'] // supported TLD-s(top level domains)
 const randomFirstName = faker.name.firstName();
 const randomLastName = faker.name.lastName();
