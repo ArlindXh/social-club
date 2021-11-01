@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "1c8d1ae1-446c-4215-bd66-527a13a6cfc1",
+		"_postman_id": "ff012779-8e86-49c0-ad06-03e673f66a2a",
 		"name": "Social-Club",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Qarr Bungu\",\r\n    \"email\":\"qarr123@gmail.com\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Qarr Bungua\",\r\n    \"email\":\"qarrbu@gmail.com\",\r\n    \"password\": \"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"qarr123@gmail.com\",\r\n    \"password\":\"qwerty\"\r\n}",
+					"raw": "{\r\n    \"email\":\"qarrbu@gmail.com\",\r\n    \"password\":\"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -98,7 +98,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"oldPassword\":\"qwertya\",\r\n    \"newPassword\":\"qwerty\",\r\n    \"confirmPassword\":\"qwerty\"\r\n}",
+					"raw": "{\r\n    \"oldPassword\":\"qwertyasdd\",\r\n    \"newPassword\":\"qwerty\",\r\n    \"confirmPassword\":\"qwerty\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -125,19 +125,19 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "{{bestoken}}",
+						"value": "{{qarrtoken}}",
 						"type": "text",
 						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "{{host}}/user/61708f045bb68832b7e6347d",
+					"raw": "{{host}}/user/618055886c7b030bed9b96b4",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"user",
-						"61708f045bb68832b7e6347d"
+						"618055886c7b030bed9b96b4"
 					]
 				}
 			},
@@ -155,13 +155,13 @@
 					}
 				],
 				"url": {
-					"raw": "{{host}}/user/61708defed934c4a20ff244c/like",
+					"raw": "{{host}}/user/618055886c7b030bed9b96b4/like",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"user",
-						"61708defed934c4a20ff244c",
+						"618055886c7b030bed9b96b4",
 						"like"
 					]
 				}
@@ -175,18 +175,18 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "{{bestoken}}",
+						"value": "{{token}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "{{host}}/user/616ee5902e3d743bf4558e56/unlike",
+					"raw": "{{host}}/user/618055886c7b030bed9b96b4/unlike",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"user",
-						"616ee5902e3d743bf4558e56",
+						"618055886c7b030bed9b96b4",
 						"unlike"
 					]
 				}
@@ -197,7 +197,13 @@
 			"name": "find-all",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
 				"url": {
 					"raw": "{{host}}/most-liked",
 					"host": [
