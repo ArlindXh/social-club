@@ -28,6 +28,7 @@ $ npm run docker
 
 ## Run Test in Dev environment (while docker is running)
 ```
+npm i
 npm run test
 ```
 
