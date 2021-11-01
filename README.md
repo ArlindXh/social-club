@@ -2,9 +2,10 @@ This project provides a register/login functionality with authentication calls.
 
 As a user you can like and unlike other users, you can also see user information based on their id, or even see who are the users with the most likes.
 
-`.env file has been pushed to the code for easier testing purposes otherwise it would be skipped`
 
-## Local Setup
+>.env file has been pushed to the code for easier testing purposes otherwise it would be skipped
+
+## Local Environment Setup
 
 ### Requirements and setup:
 [MongoDB](https://www.mongodb.com/try/download/community) installation is optional. If local MongoDB is running, make sure to update the `.env` file with the appropriate `MONGO_URL`.
@@ -14,7 +15,7 @@ npm run docker-mongo   `if no local MongoDB is installed`
 npm run ts-node-server
 ```
 
-## Development Environment Docker Setup (Both Server and DB)
+## Development Environment with Docker Setup (Both Server and DB)
 
 ```
 $ npm run docker-build
