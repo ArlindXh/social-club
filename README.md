@@ -5,7 +5,7 @@ As a user you can like and unlike other users, you can also see user information
 
 >.env file has been pushed to the code for easier testing purposes otherwise it would be skipped
 
->Please import the postman collection (`Assignment-API.postman_collection.json`) in your Postman App to use all the API Endpoints and Postman environment variables(request payloads,token,etc).
+>Please import the postman collection (`Social-Club-API.postman_collection`) in your Postman App to use all the API Endpoints and Postman environment variables(request payloads,token,etc).
 
 >When you login, in the response you should get an `auth_token`, replace that value with the `token` variable in the `Social-Club` Postman Environment to use the other API-s which require a valid token.
 
