@@ -16,9 +16,9 @@
     "start": "nodemon src/server.ts",
     "test": "jest",
     "fix-lint": "./node_modules/eslint/bin/eslint.js  src --ext .ts --fix",
-    "dev": ".\\scripts\\dev.sh",
-    "dev-server": "NODE_ENV=development nodemon",
-    "docker": "docker-compose -f docker-compose.dev.yml up -d --force-recreate"
+    "docker-build": "docker build --no-cache -t api-server .",
+    "docker": "docker-compose -f docker-compose.yml up -d --force-recreate --remove-orphans",
+    "docker-mongo": "docker-compose -f docker-compose.mongo.yml up -d --force-recreate --remove-orphans"
   },
   "dependencies": {
     "@hapi/joi": "17.1.1",

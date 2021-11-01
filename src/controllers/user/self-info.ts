@@ -24,7 +24,7 @@ const selfInfo: RequestHandler = async (req: Request, res: Response) => {
         if (error.message === "jwt malformed") {
             res.status(400).send({ message: "Malformed or bad token" })
         } else {
-            throw error;
+            res.status(500).send(error);
         }
     }
 };

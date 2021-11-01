@@ -4,15 +4,19 @@ As a user you can like and unlike other users, you can also see user information
 
 
 ## Local Setup
+
+### Requirements and setup:
+[MongoDB](https://www.mongodb.com/try/download/community) installation is optional. If local MongoDB is running, make sure to update the `.env` file with the appropriate `MONGO_URL`.
 ```
 npm i
+npm run docker-mongo   `if no local MongoDB is installed`
 npm run ts-node-server
 ```
 
-## Setup docker for development environment
+## Setup docker for development environment(Both Server and DB)
 
 ```
-$ docker build -t api-server .
+$ npm run docker-build
 $ npm run docker
 ```
 
